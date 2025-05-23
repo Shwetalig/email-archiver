@@ -35,4 +35,9 @@ class Email extends Model
     {
         return $this->hasMany(Attachment::class);
     }
+
+    public function bids()
+    {
+        return $this->belongsToMany(Bid::class)->withTimestamps();
+    }
 }

@@ -17,9 +17,9 @@ class GoogleService
         ]);
         $client->setRedirectUri(env('GOOGLE_REDIRECT_URI'));
         $client->addScope([
-    \Google_Service_Gmail::GMAIL_READONLY,
-    \Google_Service_Drive::DRIVE_FILE, // this is required for uploading files
-]);
+            \Google_Service_Gmail::GMAIL_READONLY,
+            \Google_Service_Drive::DRIVE_FILE,
+        ]);
 
         $client->setAccessType('offline');
         $client->setPrompt('select_account consent');
